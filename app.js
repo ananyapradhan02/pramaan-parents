@@ -16,10 +16,8 @@
       wordmark: 'pramaan <em>parents</em>',
       langGroup: 'language',
       theme: 'theme',
-      sampleStamp: 'sample',
-      sampleNote: 'sample data. meera is not a real child, and nothing on this page is sent anywhere.',
       h1: 'a week of <em>meera</em>',
-      dek: 'what a parent would get from pramaan each evening: one short note with what their child asked today, one question for dinner, and how effort and self-belief moved. meera is a sample child, twelve, in bengaluru.',
+      dek: 'what a parent would get from pramaan each evening: one short note with what their child asked today, one question for dinner, and how effort and self-belief moved. meera is twelve, in bengaluru.',
       threadTitle: 'pramaan · meera\'s evening note',
       dayOf: 'day',
       chooseDay: 'choose a day',
@@ -53,7 +51,7 @@
       how4b: 'in the real version, the note is put together on the family\'s own device. nothing about meera goes to a server, and she is never compared with other children.',
       waitLabel: 'waitlist',
       waitH2: 'get a week of <em>notes</em>',
-      waitDek: 'this form stores nothing and sends nothing. it only shows what would happen.',
+      waitDek: 'joining opens your email with these details, ready to send to ananya. nothing is saved on this page.',
       waitLegend: 'about you',
       fName: 'your first name',
       fAge: 'your child\'s age',
@@ -66,8 +64,9 @@
       fReset: 'start over',
       needName: 'add your first name and your child\'s age to see what would happen.',
       langIn: { en: 'english', hi: 'hindi', kn: 'kannada' },
-      result: 'nothing was saved or sent; in the real version, {name}, you would get a one-line hello from pramaan in {lang}, then seven evening notes about your child aged {age}, and you could turn them off at any time.',
+      result: 'thank you, {name}. your email should now be open with your details, ready to send to ananyapradhan02@gmail.com. if it did not open, write there directly, or book a 30-minute call.',
       map1: 'the week', map2: 'how to read a note', map3: 'waitlist', map4: 'source',
+      map5: 'write to ananya', map6: 'book a call', fCall: 'or book a 30-minute call',
       days: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'],
       short: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
     },
@@ -75,10 +74,8 @@
       wordmark: 'प्रमाण <em>अभिभावक</em>',
       langGroup: 'भाषा',
       theme: 'थीम',
-      sampleStamp: 'नमूना',
-      sampleNote: 'नमूना डेटा। मीरा असली बच्ची नहीं है, और इस पेज से कुछ भी कहीं नहीं भेजा जाता।',
       h1: 'मीरा का <em>एक हफ़्ता</em>',
-      dek: 'हर शाम प्रमाण से माता-पिता को यही मिलेगा: एक छोटा संदेश, जिसमें होगा कि आज बच्चे ने क्या पूछा, खाने की मेज़ के लिए एक सवाल, और मेहनत व आत्मविश्वास में क्या बदला। मीरा एक नमूना बच्ची है, बारह साल की, बेंगलुरु में।',
+      dek: 'हर शाम प्रमाण से माता-पिता को यही मिलेगा: एक छोटा संदेश, जिसमें होगा कि आज बच्चे ने क्या पूछा, खाने की मेज़ के लिए एक सवाल, और मेहनत व आत्मविश्वास में क्या बदला। मीरा बारह साल की है, बेंगलुरु में रहती है।',
       threadTitle: 'प्रमाण · मीरा का शाम का संदेश',
       dayOf: 'दिन',
       chooseDay: 'दिन चुनें',
@@ -112,7 +109,7 @@
       how4b: 'असली संस्करण में यह संदेश परिवार के अपने डिवाइस पर ही तैयार होता है। मीरा के बारे में कुछ भी किसी सर्वर पर नहीं जाता, और उसकी तुलना कभी दूसरे बच्चों से नहीं होती।',
       waitLabel: 'प्रतीक्षा सूची',
       waitH2: 'एक हफ़्ते के <em>संदेश</em> पाएँ',
-      waitDek: 'यह फ़ॉर्म न कुछ सहेजता है, न कुछ भेजता है। यह बस दिखाता है कि आगे क्या होता।',
+      waitDek: 'जुड़ें दबाते ही आपका ईमेल ऐप यह जानकारी लिखकर खुलेगा, अनन्या को भेजने के लिए तैयार। इस पेज पर कुछ भी सहेजा नहीं जाता।',
       waitLegend: 'आपके बारे में',
       fName: 'आपका पहला नाम',
       fAge: 'आपके बच्चे की उम्र',
@@ -125,8 +122,9 @@
       fReset: 'फिर से भरें',
       needName: 'आगे क्या होता, यह देखने के लिए अपना पहला नाम और बच्चे की उम्र भरें।',
       langIn: { en: 'अंग्रेज़ी में', hi: 'हिंदी में', kn: 'कन्नड़ में' },
-      result: 'कुछ भी सहेजा या भेजा नहीं गया; असली संस्करण में, {name}, आपको प्रमाण से {lang} एक छोटा-सा नमस्ते मिलता, फिर आपके {age} साल के बच्चे के बारे में सात शामों के संदेश, और आप इन्हें कभी भी बंद कर सकते।',
+      result: 'धन्यवाद, {name}। आपका ईमेल ऐप आपकी जानकारी के साथ खुल गया होगा, ananyapradhan02@gmail.com पर भेजने के लिए तैयार। अगर नहीं खुला, तो सीधे इसी पते पर लिखें, या 30 मिनट की कॉल बुक करें।',
       map1: 'पूरा हफ़्ता', map2: 'संदेश कैसे पढ़ें', map3: 'प्रतीक्षा सूची', map4: 'सोर्स कोड',
+      map5: 'अनन्या को लिखें', map6: 'कॉल बुक करें', fCall: 'या 30 मिनट की कॉल बुक करें',
       days: ['सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार', 'रविवार'],
       short: ['सोम', 'मंगल', 'बुध', 'गुरु', 'शुक्र', 'शनि', 'रवि']
     },
@@ -134,10 +132,8 @@
       wordmark: 'ಪ್ರಮಾಣ <em>ಪೋಷಕರು</em>',
       langGroup: 'ಭಾಷೆ',
       theme: 'ಥೀಮ್',
-      sampleStamp: 'ಮಾದರಿ',
-      sampleNote: 'ಮಾದರಿ ಮಾಹಿತಿ. ಮೀರಾ ನಿಜವಾದ ಮಗು ಅಲ್ಲ, ಮತ್ತು ಈ ಪುಟದಿಂದ ಏನೂ ಎಲ್ಲಿಗೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ.',
       h1: 'ಮೀರಾಳ <em>ಒಂದು ವಾರ</em>',
-      dek: 'ಪ್ರತಿ ಸಂಜೆ ಪ್ರಮಾಣದಿಂದ ಪೋಷಕರಿಗೆ ಬರುವುದು ಇದೇ: ಮಗು ಇಂದು ಏನು ಕೇಳಿತು, ಊಟದ ಹೊತ್ತಿಗೆ ಒಂದು ಪ್ರಶ್ನೆ, ಮತ್ತು ಪ್ರಯತ್ನ ಹಾಗೂ ಆತ್ಮವಿಶ್ವಾಸ ಹೇಗೆ ಬದಲಾಯಿತು ಎಂಬ ಒಂದು ಚಿಕ್ಕ ಸಂದೇಶ. ಮೀರಾ ಒಂದು ಮಾದರಿ ಮಗು, ಹನ್ನೆರಡು ವರ್ಷ, ಬೆಂಗಳೂರಿನವಳು.',
+      dek: 'ಪ್ರತಿ ಸಂಜೆ ಪ್ರಮಾಣದಿಂದ ಪೋಷಕರಿಗೆ ಬರುವುದು ಇದೇ: ಮಗು ಇಂದು ಏನು ಕೇಳಿತು, ಊಟದ ಹೊತ್ತಿಗೆ ಒಂದು ಪ್ರಶ್ನೆ, ಮತ್ತು ಪ್ರಯತ್ನ ಹಾಗೂ ಆತ್ಮವಿಶ್ವಾಸ ಹೇಗೆ ಬದಲಾಯಿತು ಎಂಬ ಒಂದು ಚಿಕ್ಕ ಸಂದೇಶ. ಮೀರಾಗೆ ಹನ್ನೆರಡು ವರ್ಷ, ಬೆಂಗಳೂರಿನವಳು.',
       threadTitle: 'ಪ್ರಮಾಣ · ಮೀರಾಳ ಸಂಜೆಯ ಸಂದೇಶ',
       dayOf: 'ದಿನ',
       chooseDay: 'ದಿನ ಆಯ್ಕೆಮಾಡಿ',
@@ -171,7 +167,7 @@
       how4b: 'ನಿಜವಾದ ಆವೃತ್ತಿಯಲ್ಲಿ ಈ ಸಂದೇಶ ಕುಟುಂಬದ ಸ್ವಂತ ಸಾಧನದಲ್ಲೇ ತಯಾರಾಗುತ್ತದೆ. ಮೀರಾಳ ಬಗ್ಗೆ ಯಾವುದೂ ಸರ್ವರ್‌ಗೆ ಹೋಗುವುದಿಲ್ಲ, ಮತ್ತು ಅವಳನ್ನು ಬೇರೆ ಮಕ್ಕಳೊಂದಿಗೆ ಎಂದಿಗೂ ಹೋಲಿಸುವುದಿಲ್ಲ.',
       waitLabel: 'ಕಾಯುವ ಪಟ್ಟಿ',
       waitH2: 'ಒಂದು ವಾರದ <em>ಸಂದೇಶಗಳು</em> ಪಡೆಯಿರಿ',
-      waitDek: 'ಈ ಫಾರ್ಮ್ ಏನನ್ನೂ ಉಳಿಸುವುದಿಲ್ಲ, ಏನನ್ನೂ ಕಳುಹಿಸುವುದಿಲ್ಲ. ಮುಂದೆ ಏನಾಗುತ್ತಿತ್ತು ಎಂಬುದನ್ನು ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ.',
+      waitDek: 'ಸೇರಿ ಒತ್ತಿದಾಗ ಈ ಮಾಹಿತಿಯೊಂದಿಗೆ ನಿಮ್ಮ ಇಮೇಲ್ ಆ್ಯಪ್ ತೆರೆಯುತ್ತದೆ, ಅನನ್ಯಾಗೆ ಕಳುಹಿಸಲು ಸಿದ್ಧ. ಈ ಪುಟದಲ್ಲಿ ಏನನ್ನೂ ಉಳಿಸುವುದಿಲ್ಲ.',
       waitLegend: 'ನಿಮ್ಮ ಬಗ್ಗೆ',
       fName: 'ನಿಮ್ಮ ಮೊದಲ ಹೆಸರು',
       fAge: 'ನಿಮ್ಮ ಮಗುವಿನ ವಯಸ್ಸು',
@@ -184,8 +180,9 @@
       fReset: 'ಮತ್ತೆ ಭರ್ತಿ ಮಾಡಿ',
       needName: 'ಮುಂದೆ ಏನಾಗುತ್ತಿತ್ತು ಎಂದು ನೋಡಲು ನಿಮ್ಮ ಮೊದಲ ಹೆಸರು ಮತ್ತು ಮಗುವಿನ ವಯಸ್ಸನ್ನು ಸೇರಿಸಿ.',
       langIn: { en: 'ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ', hi: 'ಹಿಂದಿಯಲ್ಲಿ', kn: 'ಕನ್ನಡದಲ್ಲಿ' },
-      result: 'ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ, ಕಳುಹಿಸಿಲ್ಲ; ನಿಜವಾದ ಆವೃತ್ತಿಯಲ್ಲಿ, {name} ಅವರೇ, ನಿಮಗೆ ಪ್ರಮಾಣದಿಂದ {lang} ಒಂದು ಸಾಲಿನ ನಮಸ್ಕಾರ ಬರುತ್ತಿತ್ತು, ನಂತರ ನಿಮ್ಮ {age} ವರ್ಷದ ಮಗುವಿನ ಬಗ್ಗೆ ಏಳು ಸಂಜೆಗಳ ಸಂದೇಶಗಳು, ಮತ್ತು ಯಾವಾಗ ಬೇಕಾದರೂ ಅವುಗಳನ್ನು ನಿಲ್ಲಿಸಬಹುದಿತ್ತು.',
+      result: 'ಧನ್ಯವಾದಗಳು, {name} ಅವರೇ. ನಿಮ್ಮ ಮಾಹಿತಿಯೊಂದಿಗೆ ನಿಮ್ಮ ಇಮೇಲ್ ಆ್ಯಪ್ ತೆರೆದಿರಬೇಕು, ananyapradhan02@gmail.com ಗೆ ಕಳುಹಿಸಲು ಸಿದ್ಧ. ತೆರೆಯದಿದ್ದರೆ, ನೇರವಾಗಿ ಈ ವಿಳಾಸಕ್ಕೆ ಬರೆಯಿರಿ, ಅಥವಾ 30 ನಿಮಿಷದ ಕರೆ ಬುಕ್ ಮಾಡಿ.',
       map1: 'ಇಡೀ ವಾರ', map2: 'ಸಂದೇಶವನ್ನು ಹೇಗೆ ಓದುವುದು', map3: 'ಕಾಯುವ ಪಟ್ಟಿ', map4: 'ಮೂಲ ಕೋಡ್',
+      map5: 'ಅನನ್ಯಾಗೆ ಬರೆಯಿರಿ', map6: 'ಕರೆ ಬುಕ್ ಮಾಡಿ', fCall: 'ಅಥವಾ 30 ನಿಮಿಷದ ಕರೆ ಬುಕ್ ಮಾಡಿ',
       days: ['ಸೋಮವಾರ', 'ಮಂಗಳವಾರ', 'ಬುಧವಾರ', 'ಗುರುವಾರ', 'ಶುಕ್ರವಾರ', 'ಶನಿವಾರ', 'ಭಾನುವಾರ'],
       short: ['ಸೋಮ', 'ಮಂಗಳ', 'ಬುಧ', 'ಗುರು', 'ಶುಕ್ರ', 'ಶನಿ', 'ಭಾನು']
     }
@@ -609,7 +606,7 @@
     if (e.key === 'ArrowLeft') { go(day - 1, true); e.preventDefault(); }
   });
 
-  /* ---------- waitlist: stores nothing, sends nothing ---------- */
+  /* ---------- waitlist: opens the parent's own email to ananya; nothing stored here ---------- */
   var form = $('wait-form');
   var lastSubmit = null; // held in memory only, so a language switch can re-word the sentence
 
@@ -642,6 +639,11 @@
     $('form-hint').textContent = '';
     lastSubmit = { name: name, age: age, nlang: checked ? checked.value : lang };
     renderResult();
+    var s = lastSubmit, ages = { '6-8': '6 to 8', '9-11': '9 to 11', '12-14': '12 to 14' };
+    var body = ['hello ananya,', '', 'please add me to the pramaan parents waitlist.', '',
+      'name: ' + s.name, 'my child is aged: ' + ages[s.age], 'city: ' + (form.elements.city.value.trim() || '-'),
+      'language for the notes: ' + { en: 'english', hi: 'hindi', kn: 'kannada' }[s.nlang], '', 'thank you'].join('\n');
+    window.location.href = 'mailto:ananyapradhan02@gmail.com?subject=' + encodeURIComponent('pramaan parents waitlist') + '&body=' + encodeURIComponent(body);
     $('result').hidden = false;
     $('result').scrollIntoView({ block: 'nearest' });
   });

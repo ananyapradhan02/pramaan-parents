@@ -44,8 +44,6 @@ html[lang="hi"] body, html[lang="kn"] body { line-height: 1.6; }
   .layout > .week { border-top: 0; }
 }
 
-.sample-row { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: 0 0 var(--s2); }
-.sample-row .stamp { flex: none; }
 
 /* phone panel */
 .phone { max-width: 27rem; margin-inline: auto; overflow: visible; }

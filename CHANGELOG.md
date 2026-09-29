@@ -1,1 +1,2 @@
 - v0.1 · 29.09.26 · a sample week of evening notes (en / hi / kn), effort and self-belief sparkline, waitlist form that stores nothing
+- v0.2 · 29.09.26 · removed the sample banner; waitlist opens an email to ananya with the details filled in; calendly and email links in en / hi / kn

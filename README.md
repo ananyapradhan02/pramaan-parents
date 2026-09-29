@@ -27,8 +27,13 @@ Hand them the phone on the live URL, in the language they read at home. Say noth
 - Delivery: on-device only (app or home-screen page) versus WhatsApp. WhatsApp is what parents expect, but it would put a child's questions on Meta's servers, which breaks "no child data leaves a device". Decide before building anything real.
 - Price band for the pricing-test screen (next roadmap item), anchored on the numbers parents said unprompted.
 
+## contact
+
+- book a call: https://calendly.com/ananyapradhan/30min
+- write to ananya: ananyapradhan02@gmail.com
+
 ## status
 
-v0.1 · 29.09.26 · prototype, sample data only.
+v0.2 · 29.09.26 · sample banner removed; the waitlist now opens the parent's own email to Ananya with their details filled in (nothing stored on the page); calendly and email in the footer. Meera and her week are still written by hand, not a real child.
 
 Set in the morning-build design system (`global.css`, verbatim). MIT licence.
