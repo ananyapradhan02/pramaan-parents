@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>pramaan parents · a week of meera</title>
+  <meta name="description" content="A sample week of PRAMAAN's evening note for parents: what your child asked, one dinner-table question, and how effort and self-belief moved. English, Hindi, Kannada.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Serif+Devanagari:wght@300;400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="app.css">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+    try { var l = localStorage.getItem('pramaan-parents-lang'); if (l === 'hi' || l === 'kn') document.documentElement.setAttribute('lang', l); } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <a class="wordmark" href="./" data-i18n-html="wordmark">pramaan <em>parents</em></a>
+      <nav>
+        <div class="lang-toggle" role="group" aria-label="language" data-i18n-aria="langGroup">
+          <button class="pill" type="button" data-lang="en" aria-label="english" aria-pressed="true">en</button>
+          <button class="pill" type="button" data-lang="hi" aria-label="हिंदी" aria-pressed="false" lang="hi">हिं</button>
+          <button class="pill" type="button" data-lang="kn" aria-label="ಕನ್ನಡ" aria-pressed="false" lang="kn">ಕ</button>
+        </div>
+        <button class="pill theme-toggle" id="theme" type="button" data-i18n="theme" aria-label="toggle theme">theme</button>
+      </nav>
+    </header>
+
+    <div class="layout">
+      <section class="section intro enter" id="top">
+        <p class="sample-row"><span class="stamp" data-i18n="sampleStamp">sample</span> <span class="caption" data-i18n="sampleNote">sample data. meera is not a real child, and nothing on this page is sent anywhere.</span></p>
+        <h1 data-i18n-html="h1">a week of <em>meera</em></h1>
+        <p class="dek" data-i18n="dek">what a parent would get from pramaan each evening: one short note with what their child asked today, one question for dinner, and how effort and self-belief moved. meera is a sample child, twelve, in bengaluru.</p>
+      </section>
+
+      <section class="section week" id="week" aria-labelledby="thread-title">
+        <div class="panel phone">
+          <div class="panel-title">
+            <span id="thread-title" data-i18n="threadTitle">pramaan · meera's evening note</span>
+            <span class="meta" id="day-meta">1 / 7</span>
+          </div>
+          <div class="panel-body">
+            <div class="day-strip" id="day-strip" role="group" aria-label="choose a day"></div>
+            <div class="thread" id="thread" tabindex="-1"></div>
+            <div class="thread-nav">
+              <button class="pill" type="button" id="prev"></button>
+              <span id="next-slot"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section how" id="how">
+        <p class="label" data-i18n="howLabel">how to read a note</p>
+        <dl class="how-list">
+          <dt data-i18n="how1t">what she asked</dt>
+          <dd data-i18n="how1b"></dd>
+          <dt data-i18n="how2t">one question for dinner</dt>
+          <dd data-i18n="how2b"></dd>
+          <dt data-i18n="how3t">effort and self-belief</dt>
+          <dd data-i18n="how3b"></dd>
+          <dt data-i18n="how4t">where it lives</dt>
+          <dd data-i18n="how4b"></dd>
+        </dl>
+      </section>
+    </div>
+
+    <section class="section waitlist" id="waitlist">
+      <p class="label" data-i18n="waitLabel">waitlist</p>
+      <h2 data-i18n-html="waitH2">get a week of <em>notes</em></h2>
+      <p class="dek" data-i18n="waitDek">this form stores nothing and sends nothing. it only shows what would happen.</p>
+      <form id="wait-form" class="wait-form" novalidate>
+        <fieldset>
+          <legend data-i18n="waitLegend">about you</legend>
+          <div class="field">
+            <label for="f-name" data-i18n="fName">your first name</label>
+            <input id="f-name" name="name" type="text" autocomplete="off" maxlength="40" required>
+          </div>
+          <div class="field">
+            <label for="f-age" data-i18n="fAge">your child's age</label>
+            <select id="f-age" name="age" required>
+              <option value="" data-i18n="fChoose">choose</option>
+              <option value="6-8" data-i18n="age1">6 to 8</option>
+              <option value="9-11" data-i18n="age2">9 to 11</option>
+              <option value="12-14" data-i18n="age3">12 to 14</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-city" data-i18n="fCity">city</label>
+            <input id="f-city" name="city" type="text" autocomplete="off" maxlength="40" data-i18n-ph="fCityPh" placeholder="bengaluru">
+          </div>
+          <div class="field">
+            <span class="field-label" id="f-lang-label" data-i18n="fLang">language for the notes</span>
+            <div class="radio-row" role="radiogroup" aria-labelledby="f-lang-label">
+              <label class="radio"><input type="radio" name="nlang" value="en"> english</label>
+              <label class="radio" lang="hi"><input type="radio" name="nlang" value="hi"> हिंदी</label>
+              <label class="radio" lang="kn"><input type="radio" name="nlang" value="kn"> ಕನ್ನಡ</label>
+            </div>
+          </div>
+          <p class="form-hint caption" id="form-hint" aria-live="polite"></p>
+          <div class="row">
+            <button class="pill primary" type="submit" data-i18n="fSubmit">join the waitlist</button>
+            <button class="pill" type="reset" id="f-reset" data-i18n="fReset">start over</button>
+          </div>
+        </fieldset>
+      </form>
+      <div class="result box" id="result" aria-live="polite" hidden>
+        <p class="result-text" id="result-text"></p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <ol class="sitemap">
+        <li><a href="#week" data-i18n="map1">the week</a></li>
+        <li><a href="#how" data-i18n="map2">how to read a note</a></li>
+        <li><a href="#waitlist" data-i18n="map3">waitlist</a></li>
+        <li><a href="https://github.com/ananyapradhan02/pramaan-parents" target="_blank" rel="noopener" data-i18n="map4">source</a></li>
+      </ol>
+      <p class="colophon">set in newsreader, figtree and ibm plex mono. no analytics. © ananya pradhan</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

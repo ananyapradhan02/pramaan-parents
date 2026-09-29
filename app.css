@@ -1,0 +1,231 @@
+/* pramaan parents: project rules on top of global.css. tokens only. */
+
+/* scripts: hindi and kannada fall back to noto, and skip synthetic italics and letter-spacing that break shaping */
+html[lang="hi"] {
+  --serif: "Newsreader", "Noto Serif Devanagari", Georgia, serif;
+  --sans: "Figtree", "Noto Sans Devanagari", system-ui, sans-serif;
+}
+html[lang="kn"] {
+  --serif: "Newsreader", "Noto Serif Kannada", Georgia, serif;
+  --sans: "Figtree", "Noto Sans Kannada", system-ui, sans-serif;
+}
+.lang-toggle [lang="hi"] { font-family: "Figtree", "Noto Sans Devanagari", system-ui, sans-serif; }
+.lang-toggle [lang="kn"] { font-family: "Figtree", "Noto Sans Kannada", system-ui, sans-serif; }
+html[lang="hi"] h1, html[lang="kn"] h1 { line-height: 1.2; letter-spacing: 0; }
+html[lang="hi"] h2, html[lang="kn"] h2 { line-height: 1.35; }
+html[lang="hi"] em, html[lang="kn"] em,
+html[lang="hi"] .dek, html[lang="kn"] .dek,
+html[lang="hi"] .asked li, html[lang="kn"] .asked li,
+html[lang="hi"] .result-text, html[lang="kn"] .result-text,
+html[lang="hi"] .week-end, html[lang="kn"] .week-end { font-style: normal; }
+html[lang="hi"] .label, html[lang="kn"] .label,
+html[lang="hi"] legend, html[lang="kn"] legend,
+html[lang="hi"] .stamp, html[lang="kn"] .stamp { letter-spacing: 0; }
+html[lang="hi"] body, html[lang="kn"] body { line-height: 1.6; }
+
+/* top bar */
+.topbar nav { gap: .5rem; flex-wrap: wrap; justify-content: flex-end; }
+.lang-toggle { display: inline-flex; gap: .25rem; }
+.lang-toggle .pill { min-width: 2.4em; justify-content: center; }
+
+/* layout: thread beside the intro on wide screens, stacked on phones */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); }
+.layout > .section + .section { border-top: 1px solid var(--rule); }
+@media (min-width: 960px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 27rem);
+    grid-template-areas: "intro week" "how week";
+    column-gap: var(--s4);
+    align-items: start;
+  }
+  .intro { grid-area: intro; }
+  .week { grid-area: week; }
+  .how { grid-area: how; border-top: 1px solid var(--rule); }
+  .layout > .week { border-top: 0; }
+}
+
+.sample-row { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: 0 0 var(--s2); }
+.sample-row .stamp { flex: none; }
+
+/* phone panel */
+.phone { max-width: 27rem; margin-inline: auto; overflow: visible; }
+.phone .panel-title { position: static; }
+.phone .panel-body { padding: 0; }
+
+.day-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-bottom: 1px solid var(--rule);
+}
+.day-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .15rem;
+  padding: .55rem 0 .5rem;
+  background: transparent;
+  color: var(--text-2);
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font-size: .72rem;
+  min-width: 0;
+  transition: color .2s ease, border-color .2s ease;
+}
+.day-pill + .day-pill { border-left: 1px solid var(--rule); }
+.day-pill:hover { color: var(--green-mid); }
+.day-pill[aria-pressed="true"] { color: var(--text); border-bottom-color: var(--ink); font-weight: 600; }
+.day-pill .dp-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.day-pill .dp-num { font-size: .7rem; color: var(--text-3); }
+.day-pill[aria-pressed="true"] .dp-num { color: var(--text); }
+.day-pill:focus-visible { outline-offset: -3px; }
+
+.thread { padding: var(--s1) 1rem 0; overflow-wrap: anywhere; }
+.thread:focus { outline: none; }
+
+.part-label {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--text-3);
+  margin: 0 0 .4rem;
+  text-transform: lowercase;
+}
+
+/* earlier days, one line each */
+.earlier-label { margin-top: .4rem; }
+.earlier {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  gap: .6rem;
+  align-items: baseline;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  padding: .5rem 0;
+  color: var(--text-2);
+}
+.earlier:hover { color: var(--green-mid); }
+.earlier time { color: var(--text-3); }
+.earlier .e-day { font-size: .72rem; color: var(--text-3); }
+.earlier .e-preview { font-size: .82rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* the message */
+.msg { border-top: 1.5px solid var(--ink); padding: .8rem 0 .4rem; margin-top: .6rem; }
+.earlier-label + .msg, .thread > .msg:first-child { margin-top: 0; }
+.msg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .5rem; }
+.msg-from { font-weight: 700; font-size: .85rem; }
+.msg-head time { color: var(--text-3); }
+.greet { margin: 0 0 .9rem; font-size: .95rem; color: var(--text-2); }
+.msg-part { padding: .8rem 0; border-top: 1px dotted var(--rule-dotted); }
+
+.asked { list-style: none; margin: 0; padding: 0; }
+.asked li {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  padding-left: .9rem;
+  border-left: 2px solid var(--tint-3);
+  margin: 0 0 .55rem;
+}
+.asked li:last-child { margin-bottom: 0; }
+
+.dinner-q {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 0 0 .6rem;
+}
+.why { font-size: .85rem; color: var(--text-2); margin: 0; }
+.why-k { font-weight: 600; color: var(--text); }
+
+/* sparkline: tokens only */
+.spark { width: 100%; max-width: 17rem; height: auto; margin: .2rem 0 .5rem; overflow: visible; }
+.sp-base { stroke: var(--rule); stroke-width: 1; }
+.sp-effort { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.sp-belief { fill: none; stroke: var(--green-mid); stroke-width: 1.6; stroke-dasharray: 3 2.5; stroke-linejoin: round; }
+.sp-dot-effort { fill: var(--ink); }
+.sp-dot-belief { fill: var(--paper); stroke: var(--green-mid); stroke-width: 1.5; }
+.sp-future { fill: var(--text-4); }
+.sp-label { font-family: var(--sans); font-size: 7px; fill: var(--text-3); }
+.sp-label.now { fill: var(--text); font-weight: 700; }
+
+.legend { list-style: none; margin: 0 0 .6rem; padding: 0; }
+.legend li { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: .55rem; row-gap: 0; font-size: .82rem; padding: .15rem 0; }
+.swatch { display: inline-block; width: 1.1rem; height: 0; border-top: 2px solid var(--ink); transform: translateY(-.25em); }
+.sw-belief { border-top: 2px dashed var(--green-mid); }
+.lg-name { font-weight: 600; }
+.lg-dots { letter-spacing: .08em; }
+.lg-cmp { color: var(--text-3); font-size: .78rem; }
+.note { font-size: .9rem; color: var(--text-2); margin: 0; }
+
+.msg-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 1px solid var(--rule);
+  padding-top: .6rem;
+  margin: .2rem 0 0;
+  font-size: .78rem;
+  color: var(--text-3);
+}
+.msg-foot .mono { color: var(--text); }
+
+.week-end {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: .6rem 0 0;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
+}
+
+.thread-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .6rem;
+  flex-wrap: wrap;
+  padding: .9rem 1rem 1rem;
+}
+
+/* how to read */
+.how-list { margin: 0; max-width: var(--measure); }
+.how-list dt { font-weight: 600; font-size: .9rem; margin-top: var(--s1); }
+.how-list dt:first-child { margin-top: 0; }
+.how-list dd {
+  margin: .25rem 0 0;
+  font-family: var(--serif);
+  font-size: var(--body);
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+/* waitlist */
+.waitlist { border-top: 1px solid var(--rule); }
+.wait-form { max-width: 34rem; }
+.field { margin-bottom: var(--s1); }
+.field-label { display: block; font-size: .85rem; margin-bottom: .35em; }
+.radio-row { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.radio { display: inline-flex; align-items: center; gap: .4em; font-size: .95rem; margin: 0; cursor: pointer; }
+.radio input { width: auto; accent-color: var(--green-mid); }
+.radio[lang="hi"] { font-family: "Figtree", "Noto Sans Devanagari", system-ui, sans-serif; }
+.radio[lang="kn"] { font-family: "Figtree", "Noto Sans Kannada", system-ui, sans-serif; }
+.form-hint { min-height: 1.2em; margin: 0 0 .6rem; }
+.result { max-width: 34rem; }
+.result-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--body);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 420px) {
+  .wordmark { font-size: 1rem; }
+  .earlier { grid-template-columns: auto minmax(0, 1fr); }
+  .earlier .e-day { display: none; }
+}

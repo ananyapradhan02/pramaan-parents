@@ -1,0 +1,1 @@
+- v0.1 · 29.09.26 · a sample week of evening notes (en / hi / kn), effort and self-belief sparkline, waitlist form that stores nothing
