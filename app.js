@@ -1,11 +1,13 @@
-/* pramaan parents v0.1
-   A sample week of evening notes. All content is hard-coded sample data.
-   Nothing is fetched, sent or collected. localStorage keeps only theme, language and the day you were on. */
+/* pramaan parents v0.3
+   A sample week of evening notes, then a price test. All content is hard-coded sample data.
+   Nothing is fetched, sent or collected. localStorage keeps only theme, language, the day you were on
+   and your price-test pick (which leaves this device only if you email it yourself). */
 (function () {
   'use strict';
 
   var LANG_KEY = 'pramaan-parents-lang';
   var DAY_KEY = 'pramaan-parents-day';
+  var PRICE_KEY = 'pramaan-parents-price';
 
   function store(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   function read(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
@@ -37,7 +39,7 @@
       prev: '← previous day',
       next: 'next day →',
       endLine: 'that was the week. would a note like this be worth a monthly fee to you?',
-      endCta: 'join the waitlist →',
+      endCta: 'what would you pay? →',
       earlier: 'earlier this week',
       chartLabel: 'effort and self-belief from monday to {day}, each out of five',
       howLabel: 'how to read a note',
@@ -95,7 +97,7 @@
       prev: '← पिछला दिन',
       next: 'अगला दिन →',
       endLine: 'यह रहा पूरा हफ़्ता। क्या ऐसा संदेश आपके लिए हर महीने शुल्क देने लायक होगा?',
-      endCta: 'प्रतीक्षा सूची में जुड़ें →',
+      endCta: 'आप कितना देंगे? →',
       earlier: 'इस हफ़्ते पहले',
       chartLabel: 'सोमवार से {day} तक मेहनत और आत्मविश्वास, पाँच में से',
       howLabel: 'संदेश कैसे पढ़ें',
@@ -153,7 +155,7 @@
       prev: '← ಹಿಂದಿನ ದಿನ',
       next: 'ಮುಂದಿನ ದಿನ →',
       endLine: 'ಇದು ಇಡೀ ವಾರ. ಇಂತಹ ಸಂದೇಶಕ್ಕೆ ತಿಂಗಳಿಗೊಮ್ಮೆ ಶುಲ್ಕ ಕೊಡುವುದು ನಿಮಗೆ ಸರಿ ಅನ್ನಿಸುತ್ತದೆಯೇ?',
-      endCta: 'ಕಾಯುವ ಪಟ್ಟಿಗೆ ಸೇರಿ →',
+      endCta: 'ನೀವು ಎಷ್ಟು ಕೊಡುತ್ತೀರಿ? →',
       earlier: 'ಈ ವಾರ ಹಿಂದೆ',
       chartLabel: 'ಸೋಮವಾರದಿಂದ {day}ದವರೆಗೆ ಪ್ರಯತ್ನ ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸ, ಐದರಲ್ಲಿ',
       howLabel: 'ಸಂದೇಶವನ್ನು ಹೇಗೆ ಓದುವುದು',
@@ -187,6 +189,76 @@
       short: ['ಸೋಮ', 'ಮಂಗಳ', 'ಬುಧ', 'ಗುರು', 'ಶುಕ್ರ', 'ಶನಿ', 'ಭಾನು']
     }
   };
+
+  /* ---------- price test copy (v0.3). the prices are a test, not a launch price. ---------- */
+  var PLANS = [
+    { id: '199', rupees: 199 },
+    { id: '399', rupees: 399 },
+    { id: '699', rupees: 699 },
+    { id: 'none', rupees: null }
+  ];
+  var PRICE_UI = {
+    en: {
+      priceLabel: 'price test',
+      priceH2: 'what would you <em>pay</em>?',
+      priceDek: 'four plain choices, each for one month of notes. these prices are a test, not a launch price. your pick stays on this phone.',
+      priceLegend: 'one month of notes',
+      perMonth: 'a month',
+      plan199: 'the nightly note for one child.',
+      plan399: 'the nightly note for up to two children.',
+      plan699: 'the nightly note for up to two children, plus one twenty-minute call a month with a pramaan teacher.',
+      noneTitle: 'i wouldn\'t pay for this',
+      planNone: 'not at any of these prices.',
+      ownLabel: 'what would you pay a month? optional, in rupees',
+      priceEmpty: 'nothing picked yet. your answer stays on this phone until you choose to email it.',
+      rPick: 'your pick', rOwn: 'what you would pay', rSaved: 'saved on this phone', rNotGiven: 'not given',
+      priceSend: 'email my pick to ananya',
+      priceClear: 'clear my pick',
+      priceNote: 'nothing is sent unless you press send in your own email.',
+      map7: 'price test'
+    },
+    hi: {
+      priceLabel: 'कीमत की जाँच',
+      priceH2: 'आप कितना <em>देंगे</em>?',
+      priceDek: 'चार सीधे विकल्प, हर एक, एक महीने के संदेशों के लिए। ये कीमतें एक जाँच हैं, असली कीमत नहीं। आपका चुनाव इसी फ़ोन पर रहता है।',
+      priceLegend: 'एक महीने के संदेश',
+      perMonth: 'प्रति माह',
+      plan199: 'एक बच्चे के लिए हर शाम का संदेश।',
+      plan399: 'दो बच्चों तक के लिए हर शाम का संदेश।',
+      plan699: 'दो बच्चों तक के लिए हर शाम का संदेश, और हर महीने प्रमाण की एक शिक्षिका के साथ बीस मिनट की एक कॉल।',
+      noneTitle: 'मेरे लिए यह पैसे देने लायक नहीं',
+      planNone: 'इनमें से किसी भी कीमत पर नहीं।',
+      ownLabel: 'आप हर महीने कितना देंगे? चाहें तो लिखें, रुपयों में',
+      priceEmpty: 'अभी कुछ नहीं चुना गया। आपका जवाब इसी फ़ोन पर रहता है, जब तक आप ख़ुद उसे ईमेल न करें।',
+      rPick: 'आपका चुनाव', rOwn: 'आप कितना देंगे', rSaved: 'इस फ़ोन पर सहेजा गया', rNotGiven: 'नहीं बताया',
+      priceSend: 'मेरा जवाब अनन्या को ईमेल करें',
+      priceClear: 'मेरा जवाब हटाएँ',
+      priceNote: 'जब तक आप अपने ईमेल में भेजें नहीं दबाते, कुछ भी नहीं जाता।',
+      map7: 'कीमत की जाँच'
+    },
+    kn: {
+      priceLabel: 'ಬೆಲೆ ಪರೀಕ್ಷೆ',
+      priceH2: 'ನೀವು ಎಷ್ಟು <em>ಕೊಡುತ್ತೀರಿ</em>?',
+      priceDek: 'ನಾಲ್ಕು ಸರಳ ಆಯ್ಕೆಗಳು, ಪ್ರತಿಯೊಂದೂ ಒಂದು ತಿಂಗಳ ಸಂದೇಶಗಳಿಗೆ. ಈ ಬೆಲೆಗಳು ಒಂದು ಪರೀಕ್ಷೆ, ಅಂತಿಮ ಬೆಲೆ ಅಲ್ಲ. ನಿಮ್ಮ ಆಯ್ಕೆ ಈ ಫೋನ್‌ನಲ್ಲೇ ಇರುತ್ತದೆ.',
+      priceLegend: 'ಒಂದು ತಿಂಗಳ ಸಂದೇಶಗಳು',
+      perMonth: 'ತಿಂಗಳಿಗೆ',
+      plan199: 'ಒಂದು ಮಗುವಿಗೆ ಪ್ರತಿ ಸಂಜೆಯ ಸಂದೇಶ.',
+      plan399: 'ಎರಡು ಮಕ್ಕಳವರೆಗೆ ಪ್ರತಿ ಸಂಜೆಯ ಸಂದೇಶ.',
+      plan699: 'ಎರಡು ಮಕ್ಕಳವರೆಗೆ ಪ್ರತಿ ಸಂಜೆಯ ಸಂದೇಶ, ಜೊತೆಗೆ ತಿಂಗಳಿಗೊಮ್ಮೆ ಪ್ರಮಾಣದ ಶಿಕ್ಷಕರೊಂದಿಗೆ ಇಪ್ಪತ್ತು ನಿಮಿಷದ ಕರೆ.',
+      noneTitle: 'ಇದಕ್ಕೆ ನಾನು ಹಣ ಕೊಡುವುದಿಲ್ಲ',
+      planNone: 'ಈ ಯಾವ ಬೆಲೆಯಲ್ಲೂ ಬೇಡ.',
+      ownLabel: 'ತಿಂಗಳಿಗೆ ನೀವು ಎಷ್ಟು ಕೊಡುತ್ತೀರಿ? ಬೇಕಿದ್ದರೆ ಬರೆಯಿರಿ, ರೂಪಾಯಿಗಳಲ್ಲಿ',
+      priceEmpty: 'ಇನ್ನೂ ಏನೂ ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ. ನೀವೇ ಇಮೇಲ್ ಮಾಡುವವರೆಗೆ ನಿಮ್ಮ ಉತ್ತರ ಈ ಫೋನ್‌ನಲ್ಲೇ ಇರುತ್ತದೆ.',
+      rPick: 'ನಿಮ್ಮ ಆಯ್ಕೆ', rOwn: 'ನೀವು ಕೊಡುವ ಮೊತ್ತ', rSaved: 'ಈ ಫೋನ್‌ನಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ', rNotGiven: 'ಹೇಳಿಲ್ಲ',
+      priceSend: 'ನನ್ನ ಆಯ್ಕೆಯನ್ನು ಅನನ್ಯಾಗೆ ಇಮೇಲ್ ಮಾಡಿ',
+      priceClear: 'ನನ್ನ ಆಯ್ಕೆ ಅಳಿಸಿ',
+      priceNote: 'ನಿಮ್ಮ ಇಮೇಲ್‌ನಲ್ಲಿ ನೀವೇ ಕಳುಹಿಸು ಒತ್ತುವವರೆಗೆ ಏನೂ ಹೋಗುವುದಿಲ್ಲ.',
+      map7: 'ಬೆಲೆ ಪರೀಕ್ಷೆ'
+    }
+  };
+  Object.keys(PRICE_UI).forEach(function (l) {
+    Object.keys(PRICE_UI[l]).forEach(function (k) { UI[l][k] = PRICE_UI[l][k]; });
+  });
 
   /* ---------- the sample week (meera, 12, bengaluru) ----------
      effort and belief are meera's own two taps, 1 to 5. sample values, not a real child. */
@@ -550,7 +622,7 @@
       slot.appendChild(nb);
     } else {
       var a = el('a', 'pill primary', t('endCta'));
-      a.href = '#waitlist';
+      a.href = '#price';
       a.id = 'next';
       slot.appendChild(a);
     }
@@ -578,6 +650,8 @@
     renderStrip();
     renderThread();
     renderResult();
+    renderPlans();
+    renderPick();
   }
 
   /* ---------- language ---------- */
@@ -655,6 +729,122 @@
     $('form-hint').textContent = '';
     document.querySelectorAll('input[name="nlang"]').forEach(function (o) { delete o.dataset.user; });
     setTimeout(applyStatic, 0);
+  });
+
+  /* ---------- price test: the pick stays in localStorage; email only if the parent sends it ---------- */
+  function readPick() {
+    var raw = read(PRICE_KEY);
+    if (!raw) return null;
+    try {
+      var p = JSON.parse(raw);
+      var ok = PLANS.some(function (pl) { return pl.id === p.pick; });
+      return ok ? p : null;
+    } catch (e) { return null; }
+  }
+  function today() {
+    var d = new Date();
+    function z(n) { return (n < 10 ? '0' : '') + n; }
+    return z(d.getDate()) + '.' + z(d.getMonth() + 1) + '.' + String(d.getFullYear()).slice(2);
+  }
+  function parseOwn(v) {
+    v = String(v || '').trim();
+    if (!/^\d{1,5}$/.test(v)) return null;
+    return parseInt(v, 10);
+  }
+  function planOf(id) { return PLANS.filter(function (p) { return p.id === id; })[0]; }
+
+  function renderPlans() {
+    var wrap = $('plans');
+    var cur = readPick();
+    clear(wrap);
+    wrap.setAttribute('role', 'radiogroup');
+    wrap.setAttribute('aria-label', t('priceLegend'));
+    PLANS.forEach(function (p) {
+      var lab = el('label', 'plan');
+      var inp = el('input');
+      inp.type = 'radio';
+      inp.name = 'plan';
+      inp.value = p.id;
+      inp.checked = !!(cur && cur.pick === p.id);
+      inp.addEventListener('change', function () { savePick(); });
+      lab.appendChild(inp);
+      var body = el('span', 'plan-body');
+      var top = el('span', 'plan-top');
+      if (p.rupees) {
+        top.appendChild(el('span', 'plan-price mono', '₹' + p.rupees));
+        top.appendChild(el('span', 'plan-per', t('perMonth')));
+      } else {
+        top.appendChild(el('span', 'plan-none', t('noneTitle')));
+      }
+      body.appendChild(top);
+      body.appendChild(el('span', 'plan-line', t(p.rupees ? 'plan' + p.id : 'planNone')));
+      lab.appendChild(body);
+      wrap.appendChild(lab);
+    });
+    var own = $('p-own');
+    if (document.activeElement !== own) own.value = cur && cur.own != null ? String(cur.own) : '';
+  }
+
+  function savePick() {
+    var checked = document.querySelector('input[name="plan"]:checked');
+    var own = parseOwn($('p-own').value);
+    var prev = readPick();
+    if (!checked && own == null && !prev) return;
+    var pick = { pick: checked ? checked.value : (prev ? prev.pick : null), own: own, date: today() };
+    if (!pick.pick) return;
+    store(PRICE_KEY, JSON.stringify(pick));
+    renderPick();
+  }
+
+  function mailHref(p) {
+    var pl = planOf(p.pick);
+    var enLines = { '199': 'the nightly note for one child', '399': 'the nightly note for up to two children', '699': 'the nightly note for up to two children, plus one 20-minute call a month' };
+    var body = ['hello ananya,', '', 'my answer to the pramaan parents price test:', '',
+      'my pick: ' + (pl.rupees ? '₹' + pl.rupees + ' a month (' + enLines[pl.id] + ')' : 'i wouldn\'t pay for this'),
+      'what i would pay a month: ' + (p.own != null ? '₹' + p.own : 'not given'),
+      'page language: ' + { en: 'english', hi: 'hindi', kn: 'kannada' }[lang],
+      'date: ' + p.date, '', 'thank you'].join('\n');
+    return 'mailto:ananyapradhan02@gmail.com?subject=' + encodeURIComponent('pramaan parents price test') + '&body=' + encodeURIComponent(body);
+  }
+
+  function renderPick() {
+    var p = readPick();
+    var has = !!p;
+    $('price-empty').hidden = has;
+    $('picked').hidden = !has;
+    $('price-actions').hidden = !has;
+    $('price-note').hidden = !has;
+    if (!has) { $('price-send').setAttribute('href', 'mailto:ananyapradhan02@gmail.com'); return; }
+    var rp = $('r-pick');
+    clear(rp);
+    var pl = planOf(p.pick);
+    if (pl.rupees) {
+      rp.appendChild(el('span', 'mono', '₹' + pl.rupees));
+      rp.appendChild(document.createTextNode(' ' + t('perMonth')));
+    } else {
+      rp.textContent = t('noneTitle');
+    }
+    var ro = $('r-own');
+    clear(ro);
+    if (p.own != null) {
+      ro.appendChild(el('span', 'mono', '₹' + p.own));
+      ro.appendChild(document.createTextNode(' ' + t('perMonth')));
+    } else {
+      ro.textContent = t('rNotGiven');
+    }
+    $('r-date').textContent = p.date;
+    $('price-send').setAttribute('href', mailHref(p));
+  }
+
+  $('price-form').addEventListener('submit', function (e) { e.preventDefault(); });
+  $('p-own').addEventListener('input', savePick);
+  $('price-clear').addEventListener('click', function () {
+    try { localStorage.removeItem(PRICE_KEY); } catch (e) {}
+    $('p-own').value = '';
+    document.querySelectorAll('input[name="plan"]').forEach(function (r) { r.checked = false; });
+    renderPick();
+    var first = document.querySelector('input[name="plan"]');
+    if (first) first.focus();
   });
 
   renderAll();

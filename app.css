@@ -227,3 +227,48 @@ html[lang="hi"] body, html[lang="kn"] body { line-height: 1.6; }
   .earlier { grid-template-columns: auto minmax(0, 1fr); }
   .earlier .e-day { display: none; }
 }
+
+/* price test (v0.3): four equal choices, nothing pre-selected, no badges, no rust */
+.pricing { border-top: 1px solid var(--rule); }
+.price-form { max-width: var(--wide); }
+.plans {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  margin-bottom: var(--s2);
+}
+.plan {
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+  margin: 0;
+  padding: 1rem;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  cursor: pointer;
+  text-transform: none;
+  font-size: 1rem;
+  transition: background-color .2s ease;
+}
+.plan:hover { background: var(--paper-2); }
+.plan:has(input:checked) { background: var(--tint-1); }
+.plan input { width: auto; margin: .3rem 0 0; accent-color: var(--green-mid); flex: none; }
+.plan-body { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
+.plan-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem; min-height: 1.6rem; }
+.plan-price { font-size: 1.15rem; font-weight: 500; }
+.plan-per { font-size: .85rem; color: var(--text-2); }
+.plan-none { font-size: 1rem; font-weight: 500; line-height: 1.3; }
+.plan-line { font-size: .88rem; line-height: 1.45; color: var(--text-2); }
+.own-field { max-width: 22rem; margin-bottom: 0; }
+.own-row { display: flex; align-items: center; gap: .5rem; }
+.own-cur { font-size: 1rem; }
+.own-row input { max-width: 10rem; font-family: var(--mono); font-variant-numeric: tabular-nums lining-nums; }
+.price-result { max-width: 34rem; }
+.price-result .empty { margin: 0; }
+.picked { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .4rem 1rem; margin: 0 0 var(--s1); font-size: .95rem; }
+.picked dt { color: var(--text-3); font-size: .85rem; }
+.picked dd { margin: 0; }
+.price-actions { margin-bottom: .5rem; }
+.price-note { margin: 0; }
+[hidden] { display: none !important; }
+html[lang="hi"] .empty, html[lang="kn"] .empty { font-style: normal; }

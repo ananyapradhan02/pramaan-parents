@@ -68,6 +68,38 @@
       </section>
     </div>
 
+    <section class="section pricing" id="price" aria-labelledby="price-h2">
+      <p class="label" data-i18n="priceLabel">price test</p>
+      <h2 id="price-h2" data-i18n-html="priceH2">what would you <em>pay</em>?</h2>
+      <p class="dek" data-i18n="priceDek">four plain choices, each for one month of notes. these prices are a test, not a launch price. your pick stays on this phone.</p>
+      <form id="price-form" class="price-form" novalidate>
+        <fieldset>
+          <legend data-i18n="priceLegend">one month of notes</legend>
+          <div class="plans" id="plans"></div>
+          <div class="field own-field">
+            <label for="p-own" data-i18n="ownLabel">what would you pay a month? optional, in rupees</label>
+            <div class="own-row">
+              <span class="own-cur mono" aria-hidden="true">₹</span>
+              <input id="p-own" name="own" type="number" inputmode="numeric" min="0" max="99999" step="1" autocomplete="off">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <div class="price-result box" id="price-result" aria-live="polite">
+        <p class="empty" id="price-empty" data-i18n="priceEmpty">nothing picked yet. your answer stays on this phone until you choose to email it.</p>
+        <dl class="picked" id="picked" hidden>
+          <dt data-i18n="rPick">your pick</dt><dd id="r-pick"></dd>
+          <dt data-i18n="rOwn">what you would pay</dt><dd id="r-own"></dd>
+          <dt data-i18n="rSaved">saved on this phone</dt><dd><time id="r-date"></time></dd>
+        </dl>
+        <div class="row price-actions" id="price-actions" hidden>
+          <a class="pill primary" id="price-send" href="mailto:ananyapradhan02@gmail.com" data-i18n="priceSend">email my pick to ananya</a>
+          <button class="pill" type="button" id="price-clear" data-i18n="priceClear">clear my pick</button>
+        </div>
+        <p class="caption price-note" id="price-note" data-i18n="priceNote" hidden>nothing is sent unless you press send in your own email.</p>
+      </div>
+    </section>
+
     <section class="section waitlist" id="waitlist">
       <p class="label" data-i18n="waitLabel">waitlist</p>
       <h2 data-i18n-html="waitH2">get a week of <em>notes</em></h2>
@@ -117,12 +149,13 @@
       <ol class="sitemap">
         <li><a href="#week" data-i18n="map1">the week</a></li>
         <li><a href="#how" data-i18n="map2">how to read a note</a></li>
+        <li><a href="#price" data-i18n="map7">price test</a></li>
         <li><a href="#waitlist" data-i18n="map3">waitlist</a></li>
         <li><a href="mailto:ananyapradhan02@gmail.com" data-i18n="map5">write to ananya</a></li>
         <li><a href="https://calendly.com/ananyapradhan/30min" target="_blank" rel="noopener" data-i18n="map6">book a call</a></li>
         <li><a href="https://github.com/ananyapradhan02/pramaan-parents" target="_blank" rel="noopener" data-i18n="map4">source</a></li>
       </ol>
-      <p class="colophon">set in newsreader, figtree and ibm plex mono. no analytics. © ananya pradhan</p>
+      <p class="colophon"><span class="version">v0.3 · 30.09.26</span> · set in newsreader, figtree and ibm plex mono. no analytics. © ananya pradhan</p>
     </footer>
   </div>
   <script src="app.js"></script>

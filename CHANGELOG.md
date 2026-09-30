@@ -1,2 +1,3 @@
 - v0.1 · 29.09.26 · a sample week of evening notes (en / hi / kn), effort and self-belief sparkline, waitlist form that stores nothing
 - v0.2 · 29.09.26 · removed the sample banner; waitlist opens an email to ananya with the details filled in; calendly and email links in en / hi / kn
+- v0.3 · 30.09.26 · price test after sunday's note: ₹199 / ₹399 / ₹699 a month and "i wouldn't pay for this" as equal choices, optional own number, pick kept on the device and shown back, email-my-pick button (en / hi / kn); version in the footer
